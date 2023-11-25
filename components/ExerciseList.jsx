@@ -27,7 +27,9 @@ export default function ExerciseList({data}) {
 const ExerciseCard = ({item, router, index})=> {
     return (
         <Animated.View entering={FadeInDown.duration(400).delay(index*200).springify()}>
-            <TouchableOpacity onPress={()=> router.push({pathname: '/exerciseDetails', params: item})} className="flex py-3 space-y-2">
+            <TouchableOpacity 
+             onPress={()=> router.push({pathname: '/exerciseDetails', params: item})}
+             className="flex py-3 space-y-2">
                 <View  className="bg-white shadow rounded-[25px]">
                     <Image
                         source={{uri: item.gifUrl}}
@@ -46,7 +48,9 @@ const ExerciseCard = ({item, router, index})=> {
                     }
                 </Text>
             </TouchableOpacity>
-        </Animated.View>
+         </Animated.View>
+       
+      
       
     )
 }
